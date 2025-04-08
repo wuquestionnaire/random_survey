@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Random Survey Redirect</title>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #ffffff;
+      color: #444;
+      margin: 0;
+    }
+
+    .spinner {
+      width: 30px;
+      height: 30px;
+      border: 4px solid #ddd;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  </style>
   <script>
-    function redirectToRandomSurvey() {
-      // Replace with your actual Google Form URLs
+    window.onload = function () {
       const surveys = [
         "https://docs.google.com/forms/d/e/1FAIpQLSd3MG9sYD1Cnk5CS44hCrs4h9jAdxyhtWxV4c0yJEfJZnI8eg/viewform?usp=header",
         "https://docs.google.com/forms/d/e/1FAIpQLSemlVGabC_RmC8VNWW033XMKOys5wx02lXZ2n_2qWKTFsJzGQ/viewform?usp=header"
       ];
       const randomIndex = Math.floor(Math.random() * surveys.length);
-      window.location.href = surveys[randomIndex];
-    }
 
-    // Redirect automatically after page loads
-    window.onload = redirectToRandomSurvey;
+      // Fast redirect: 800ms
+      setTimeout(() => {
+        window.location.href = surveys[randomIndex];
+      }, 800);
+    };
   </script>
 </head>
 <body>
-  <p>Redirecting you to a survey...</p>
+  <div class="spinner"></div>
+  <p>Just a sec, loading your survey...</p>
 </body>
 </html>
