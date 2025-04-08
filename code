@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Survey Redirect</title>
+  <script>
+    function redirectToRandomSurvey() {
+      // Replace with your actual Google Form URLs
+      const surveys = [
+        "https://docs.google.com/forms/d/e/1FAIpQLSd3MG9sYD1Cnk5CS44hCrs4h9jAdxyhtWxV4c0yJEfJZnI8eg/viewform?usp=header",
+        "https://docs.google.com/forms/d/e/1FAIpQLSemlVGabC_RmC8VNWW033XMKOys5wx02lXZ2n_2qWKTFsJzGQ/viewform?usp=header"
+      ];
+      const randomIndex = Math.floor(Math.random() * surveys.length);
+      window.location.href = surveys[randomIndex];
+    }
+
+    // Redirect automatically after page loads
+    window.onload = redirectToRandomSurvey;
+  </script>
+</head>
+<body>
+  <p>Redirecting you to a survey...</p>
+</body>
+</html>
